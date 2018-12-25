@@ -1,16 +1,23 @@
       // Write your functions here
       var pickWord = function () {
+        // Create an array of words
+        var words = [
+         "javascript", 
+          "monkey", 
+          "amazing", 
+          "pancake",
+        ];
         // Return a random word
         return words[Math.floor(Math.random() * words.length)];
       }
 
       var setupAnswerArray = function (word) {
         //Return the answer array
-        var answerArray = [];
+        var answerList = [];
         for (var i = 0; i < word.length; i++) {
-          answerArray[i] = "_";
+          answerList[i] = "_";
         }
-        return answerArray;
+        return answerList;
       }
 
       var showPlayerProgress = function (answerArray) {
@@ -20,7 +27,8 @@
 
       var getGuess = function () {
         // Use prompt to get a guess
-        return prompt("Guess a letter, or click Cancel to stop playing");
+        var promptGuess = prompt("Guess a letter, or click Cancel to stop playing");
+        return promptGuess;
       }
 
       var updateGameState =  function (guess, word, answerArray) {
@@ -43,18 +51,6 @@
         alert(answerArray.join(" "));
         alert("Good job! The answer was " + word);
       }
-
-      // Create an array of words
-      var words = [
-        "javascript", 
-        "monkey", 
-        "amazing", 
-        "pancake",
-        "network",
-        "awesome",
-        "party",
-        "country"
-      ];
 
       // Pick a random word
       var word = pickWord();
